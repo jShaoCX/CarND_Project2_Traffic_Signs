@@ -42,7 +42,7 @@ The goals / steps of this project are the following:
 [image15]: ./project_images/TrialData_image.png "Trial_Data"
 [image16]: ./project_images/classification_report.png "classification_report"
 
-[image17]: ./project_images/softmax_beware_ice.png "softmax_beware_ice_sign"
+[image17]: ./project_images/softmax_beware_ice_snow.png "softmax_beware_ice_sign"
 [image18]: ./project_images/softmax_no_entry.png "softmax_no_entry_sign"
 [image19]: ./project_images/softmax_pedestrians.png "softmax_pedestrians_sign"
 [image20]: ./project_images/softmax_road_work.png "softmax_road_work_sign"
