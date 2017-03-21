@@ -14044,6 +14044,9 @@ IBAIALEoBgKBAPD/A1aJaEoaSO/9AAAAAElFTkSuQmCC
 <span class="n">plt2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">bright_im</span><span class="p">)</span>
 <span class="n">fig2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
 
+<span class="n">temp</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">test_im</span><span class="p">,</span> <span class="n">cv</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
+<span class="n">cv</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;original_augment_brightness.png&#39;</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span>
+
 <span class="n">temp</span> <span class="o">=</span> <span class="n">cv</span><span class="o">.</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">bright_im</span><span class="p">,</span> <span class="n">cv</span><span class="o">.</span><span class="n">COLOR_BGR2RGB</span><span class="p">)</span>
 <span class="n">cv</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="s1">&#39;augment_brightness.png&#39;</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span>
 
@@ -19064,7 +19067,7 @@ kAgDGQAAAAAkwkAGAAAAAIn8fzzF0CYjgItSAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong></p>
+<p>It seems that the first convolution layer output shows the large features of the image. The overall shape of the sign is included and a good portion of detail on the insignia is shown as well. This makes sense because the small 5x5 filter is running through the entire original image, pixel by pixel. The second convolution layer seems to be focused more on the overall shape of the sign, a triangle. This layer omits the details of the center of the sign and just finds the triangular shape. The last layer seems to show just lines which is not as intuitive but considering that each pixel in the output of this layer is representing a large portion of the original image with just a 0-255 value, this last convolution layer cannot contain much detail about the image. It just provides information about the areas that are usually bright or dark in the original image. This is useful because as seen in a few of the feature maps the lines are diagonals and therefore these layers are learning the orientation of edges in the overall image.</p>
 
 </div>
 </div>
